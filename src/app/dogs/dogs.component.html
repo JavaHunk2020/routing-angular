@@ -7,19 +7,30 @@
 <table class="table table-bordered">
   <thead>
     <tr>
-      <th>Name</th>
+      <th>Name
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Font_Awesome_5_regular_arrow-circle-up_green.svg/2048px-Font_Awesome_5_regular_arrow-circle-up_green.svg.png" style="height: 40px;;">
+
+      </th>
       <th>Color</th>
       <th>Photo</th>
-      <th>Breed</th>
+      <th>Breed
+        <img [hidden]="!hidebreed" (click)="sortAsc()" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Font_Awesome_5_regular_arrow-circle-up_green.svg/2048px-Font_Awesome_5_regular_arrow-circle-up_green.svg.png" style="height: 40px;">
+        <img [hidden]="hidebreed"  (click)="sortDesc()" src="assets/desc.png" style="height: 40px;">
+      </th>
       <th>Action</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let dog of dogs">
-      <td>{{dog.name}}</td>
+      <td>{{dog.name}}
+       
+
+      </td>
       <td>{{dog.color}}</td>
       <td><img src="{{dog.image}}" style="height: 120px;"></td>
-      <td><b>{{dog.breed}}</b></td>
+      <td><b>{{dog.breed}}</b>
+        
+    </td>
       <td style="width: 24%;">
         <button type="button" class="btn btn-primary">Details</button>
         &nbsp;
